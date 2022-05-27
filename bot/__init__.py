@@ -350,6 +350,12 @@ try:
 except:
     KATDRIVE_CRYPT = None
 try:
+    KOLOP_CRYPT = getConfig("KOLOP_CRYPT")
+    if len(KOLOP_CRYPT) == 0:
+        raise KeyError
+except:
+    KOLOP_CRYPT = None
+try:
     DRIVEFIRE_CRYPT = getConfig("DRIVEFIRE_CRYPT")
     if len(DRIVEFIRE_CRYPT) == 0:
         raise KeyError
