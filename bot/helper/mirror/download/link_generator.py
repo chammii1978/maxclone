@@ -1,4 +1,4 @@
-from bot import UNIFIED_EMAIL, UNIFIED_PASS, GDTOT_CRYPT, HUBDRIVE_CRYPT, KATDRIVE_CRYPT, DRIVEFIRE_CRYPT
+from bot import UNIFIED_EMAIL, UNIFIED_PASS, GDTOT_CRYPT, HUBDRIVE_CRYPT, KATDRIVE_CRYPT, DRIVEFIRE_CRYPT, KOLOP_CRYPT
 from bot.helper.others.exceptions import DirectDownloadLinkException
 import re
 import base64
@@ -159,7 +159,7 @@ def udrive(url: str) -> str:
     if 'katdrive' in url:
         client.cookies.update({'crypt': KATDRIVE_CRYPT})
     if 'kolop' in url:
-        client.cookies.update({'crypt': KATDRIVE_CRYPT})
+        client.cookies.update({'crypt': KOLOP_CRYPT})
     if 'drivefire' in url:
         client.cookies.update({'crypt': DRIVEFIRE_CRYPT})
     res = client.get(url)
