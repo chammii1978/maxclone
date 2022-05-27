@@ -156,7 +156,9 @@ def udrive(url: str) -> str:
     client = requests.Session()
     if ('hubdrive' or 'drivehub') in url:
         client.cookies.update({'crypt': HUBDRIVE_CRYPT})
-    if ('katdrive' or 'kolop') in url:
+    if 'katdrive' in url:
+        client.cookies.update({'crypt': KATDRIVE_CRYPT})
+    if 'kolop' in url:
         client.cookies.update({'crypt': KATDRIVE_CRYPT})
     if 'drivefire' in url:
         client.cookies.update({'crypt': DRIVEFIRE_CRYPT})
